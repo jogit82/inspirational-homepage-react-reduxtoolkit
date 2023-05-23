@@ -1,51 +1,46 @@
-# Inspirational Homepage (A React Redux App)
+# Getting Started with Create React App and Redux
 
-### Purpose
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-This application interacts with different APIs to display the current weather, a background image, and an ninspirational quote. It also provides users with a space to write down their goals for the day.
-![demo](https://github.com/jogit82/inspirational-homepage/blob/main/Daily-planner-demo.gif?raw=true)
+## Available Scripts
 
-### Features
+In the project directory, you can run:
 
-- Users can check the current weather
-- Users are shown an inspirational image
-- Users can cycle through multiple fetched images
-- Users are shown an inspirational quote
-- Users can write down their goals
-- Users can delete goals
-- Users can mark goals as complete
+### `npm start`
 
-### Prerequisites:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- HTML
-- CSS
-- JavaScript, including requests to APIs
-- React
-- Redux
-- Git and GitHub
-- Deployment with Netlify
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Project Tasks Completed
+### `npm test`
 
-1. Connect Application to a Weather API
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-###### OpenWeather API
+### `npm run build`
 
-- Create an account
-- Go to the API keys page and copy the Key value
-- Read their API documentation to see which API gives me the data I need
-- Handle the loading and error states.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-2. Connect Application to a Quotes API
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-###### Quotes API
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Read their API documentation to see which API gives me the data I need
+### `npm run eject`
 
-3. Connect Application to an Image API
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-###### Unsplash API
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- Create an account
-- Create a new application on their developer portal. Copied the Access Key.
-- Read their API documentation to see which API gives me the data I need
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
