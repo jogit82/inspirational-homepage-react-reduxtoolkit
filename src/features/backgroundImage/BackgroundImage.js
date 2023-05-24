@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  getBackgroundImage,
+  //selectBackgroundImage,
+} from "./backgroundImageSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const BackgroundImage = () => {
+  const { imageUrls, currentImageUrlIndex } = useSelector(
+    (state) => state.backgroundImage
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBackgroundImage());
+  }, [dispatch]);
+
   return (
     <div id="background-image-container">
       <img
-        src="https://i.natgeofe.com/k/327b01e8-be2e-4694-9ae9-ae7837bd8aea/mallard-male-swimming_16x9.jpg"
-        alt="background-image"
+        src={imageUrls[currentImageUrlIndex]}
+        alt="background image"
+        id="background-image"
       />
     </div>
   );
