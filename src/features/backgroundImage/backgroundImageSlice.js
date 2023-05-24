@@ -22,5 +22,5 @@ const options = {
 };
 
 export const backgroundImageSlice = createSlice(options);
-//export const selectBackgroundImage = (state) => state.backgroundImage;
+export const selectBackgroundImage = (state) => state.backgroundImage;
 export default backgroundImageSlice.reducer;

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import {
   getBackgroundImage,
-  //selectBackgroundImage,
+  selectBackgroundImage,
 } from "./backgroundImageSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const BackgroundImage = () => {
   const { imageUrls, currentImageUrlIndex } = useSelector(
-    (state) => state.backgroundImage
+    selectBackgroundImage
   );
   const dispatch = useDispatch();
 
