@@ -11,3 +11,60 @@ Momentum:
 My Inspirational Homepage:
 
 ![Myapp](https://github.com/jogit82/inspirational-homepage-react-reduxtoolkit/blob/main/Daily-planner-demo.gif?raw=true)
+
+## Project Structure (Folders)
+
+1. app
+   - store.js - configureStore()
+2. features
+   1. backgroundImage
+      - BackgroundImage.js
+        - displays background image
+        - dispatches getBackgroundImage()
+        - import getBackgroundImage from backgroundImageSlice
+      - backgroundImageSlice.js
+        - createSlice()
+        - contains switchToNextBackgroundImage, switchToPreviousBackgroundImage, getBackgroundImage (Thunk) logic
+   2. error
+      - Error.js
+        - displays error message
+        - dispatches retryHandler
+        - dispatches clearErrorMessage
+      - errorSlice.js
+        - contains retryHandler, clearErrorMessage logic
+   3. journal
+      - Journal.js
+        - dispatches addJournalEntry
+      - journalSlice.js
+        - contains addJournalEntry, removeEntry, toggleEntryDone logic
+   4. quote
+      - Quote.js
+        - dispatches getQuote
+      - quoteslice.js
+        - contains getQuote logic (Thunk)
+   5. weather
+      - weather.js
+        - dispatches getWeather
+      - weatherSlice.js
+        - contains getWeather(Thunk), setCity, setState logic
+3. components
+   1. BackgroundImagePreviousImage.js
+      - dispatches switchToPreviousBackgroundImage
+      - displays button
+   2. BackgroundImageNextImage.js
+      - dispatches switchToNextBackgroundImage
+      - displays button
+   3. JournalEntries.js
+      - displays a list of journals
+   4. JournalEntry.js
+      - displays journal
+      - dispatches removeEntry(id)
+      - dispatches toggleEntryDone(id)
+      - use third party library called react-dom-confetti
+4. api
+   1. openWeatherMap
+      - fetches weather data (weatherMetadata, temperature) from openWeatherMap https://api.openweathermap.org
+   2. quotes
+      - fetches a quote data (quote, author) from quotes https://quotes.rest/qod?language=en
+   3. unsplash
+      - fetches image data (image url) from unsplash https://api.unsplash.com/
