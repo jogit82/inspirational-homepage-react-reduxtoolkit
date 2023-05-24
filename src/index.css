@@ -1,13 +1,150 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap");
+
+body,
+button {
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  color: white;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 1fr auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Header Header Header"
+    "Main Main Main"
+    "Footer Footer Footer";
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  grid-area: Header;
+  padding: 12px 24px;
+}
+
+main {
+  grid-area: Main;
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+  padding-left: 32px;
+  padding-right: 32px;
+  align-items: center;
+}
+
+footer {
+  grid-area: Footer;
+  padding: 24px;
+}
+
+h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+  line-height: 46px;
+  text-shadow: 0 2px 4px rgba(71, 97, 206, 0.36);
+  position: relative;
+  top: 4px;
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(71, 97, 206, 0.357272);
+}
+
+/*****************
+background image
+******************/
+#background-image-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#background-image {
+  object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+  transform: scale(1.5);
+  filter: brightness(0.5) blur(5px);
+}
+
+/*****************
+background image controller
+******************/
+.wallpaper-control button {
+  height: fit-content;
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 64px;
+  cursor: pointer;
+  font-weight: 200;
+  opacity: 0.5;
+  transition: opacity 0.1s ease-in;
+}
+
+.wallpaper-control button:hover {
+  opacity: 1;
+}
+
+.left-wallpaper-control {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.right-wallpaper-control {
+  grid-row-start: 2;
+  grid-column-start: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 16px;
+}
+
+/*****************
+journal
+******************/
+
+/*****************
+error
+******************/
+
+/*****************
+quote
+******************/
+
+/*****************
+weather
+******************/
