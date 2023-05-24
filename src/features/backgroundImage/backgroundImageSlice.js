@@ -12,7 +12,20 @@ const options = {
     imageUrls: [],
     currentImageUrlIndex: 0,
   },
-  reducers: {},
+  reducers: {
+    switchToNextBackgroundImage: (state) => {
+      state.currentImageUrlIndex =
+        (state.currentImageUrlIndex + 1) % state.imageUrls.length;
+    },
+    switchToPreviousBackgroundImage: (state) => {
+      let newIndex = state.currentImageUrlIndex - 1;
+      if (newIndex < 0) {
+        newIndex = state.imageUrls.length - 1;
+      }
+
+      state.currentImageUrlIndex = newIndex;
+    },
+  },
   extraReducers: {
     [getBackgroundImage.fulfilled]: (state, action) => {
       state.imageUrls = action.payload;
@@ -23,4 +36,6 @@ const options = {
 
 export const backgroundImageSlice = createSlice(options);
 export const selectBackgroundImage = (state) => state.backgroundImage;
+export const { switchToNextBackgroundImage, switchToPreviousBackgroundImage } =
+  backgroundImageSlice.actions;
 export default backgroundImageSlice.reducer;
