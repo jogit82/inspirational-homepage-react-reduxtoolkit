@@ -144,6 +144,19 @@ error
 /*****************
 quote
 ******************/
+#quote {
+  text-align: center;
+}
+
+.quote-author {
+  opacity: 0.75;
+  margin: 0;
+}
+
+.quote-message {
+  margin: 0;
+  margin-bottom: 4px;
+}
 
 /*****************
 weather
