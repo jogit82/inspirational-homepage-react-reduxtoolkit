@@ -136,6 +136,139 @@ background image controller
 /*****************
 journal
 ******************/
+.surface {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: fit-content;
+  padding: 24px 24px;
+  width: 85%;
+}
+
+#journal {
+  margin-bottom: 24px;
+}
+
+.journal-input {
+  width: 100%;
+  padding-top: 4px;
+  display: block;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 2.25em;
+  line-height: 1.2;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+}
+
+.surface h2 {
+  margin: 0;
+}
+
+.entries-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.entries-list > * {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.entry {
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: fit-content;
+  padding: 24px 24px;
+  position: relative;
+  font-size: 18px;
+}
+
+.surface-styles {
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.surface-blue {
+  background: rgba(69, 123, 157, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.surface-red {
+  background: rgba(230, 57, 70, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.surface-green {
+  background: rgba(88, 129, 87, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.surface-orange {
+  background: rgba(247, 127, 0, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.entry-actions-container {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+.entry-actions-container > * {
+  margin-right: 6px;
+}
+
+.entry:hover .entry-actions-container {
+  opacity: 1;
+}
+
+.entry-actions-container button {
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.2s ease-in;
+  outline: none;
+  color: white;
+  font-weight: 700;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.entry-actions-container button:hover {
+  filter: brightness(1.3);
+}
+
+.remove {
+  background: rgba(208, 2, 27, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.done {
+  background: rgba(80, 227, 194, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.entry-done {
+  background: rgba(155, 155, 155, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  opacity: 0.25;
+}
 
 /*****************
 error
