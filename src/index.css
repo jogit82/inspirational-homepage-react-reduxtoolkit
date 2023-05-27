@@ -45,7 +45,7 @@ main {
   grid-area: Main;
   display: flex;
   flex-direction: column;
-  padding-top: 64px;
+  padding-top: 150px;
   padding-left: 32px;
   padding-right: 32px;
   align-items: center;
@@ -273,6 +273,28 @@ journal
 /*****************
 error
 ******************/
+#error-message-container {
+  background: #e63946;
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px;
+  align-items: center;
+  margin-top: -12px;
+}
+
+#error-message-container button {
+  margin-left: auto;
+  border: 2px solid white;
+  background: none;
+  color: white;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 
 /*****************
 quote
@@ -294,3 +316,22 @@ quote
 /*****************
 weather
 ******************/
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.weather p {
+  margin: 0;
+}
+
+.weather-description {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.weather-text {
+  text-align: left;
+  margin-left: -6px;
+}

@@ -3,6 +3,7 @@ import backgroundImageReducer from "../features/backgroundImage/backgroundImageS
 import quoteReducer from "../features/quote/quoteSlice";
 import weatherReducer from "../features/weather/weatherSlice";
 import journalReducer from "../features/journal/journalSlice";
+import errorReducer from "../features/error/errorSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     quote: quoteReducer,
     weather: weatherReducer,
     journal: journalReducer,
+    error: errorReducer,
   },
 });

@@ -5,7 +5,7 @@ const options = {
   initialState: {
     entries: [
       { text: "Feed dog", isDone: false },
-      { test: "Do laundry", isDone: false },
+      { text: "Do laundry", isDone: false },
       { text: "Do dishes", isDOne: false },
       { text: "Cook dinner", isDone: false },
     ],
