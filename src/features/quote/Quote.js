@@ -12,8 +12,8 @@ const Quote = () => {
 
   return (
     <div id="quote">
-      <p className="quote-message">"Things do not change; we change."</p>
-      <p className="quote-author">Henry Thoreau</p>
+      <p className="quote-message">"{quote}"</p>
+      <p className="quote-author">{author}</p>
     </div>
   );
 };
