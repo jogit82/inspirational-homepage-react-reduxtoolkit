@@ -65,6 +65,6 @@ My Inspirational Homepage:
    1. openWeatherMap
       - fetches weather data (weatherMetadata, temperature) from openWeatherMap https://api.openweathermap.org
    2. quotes
-      - fetches a quote data (quote, author) from quotes https://quotes.rest/qod?language=en
+      - fetches a quote data (quote, author) from quotes https://api.api-ninjas.com/v1/quotes
    3. unsplash
       - fetches image data (image url) from unsplash https://api.unsplash.com/
