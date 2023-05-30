@@ -1,44 +1,46 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import openWeatherMapApi from "../../api/openWeatherMap";
+import geopifyApi from "../../api/geoapify";
 
-export const getWeather = createAsyncThunk(
-  "weather/getWeather",
-  ({ city, state }) => openWeatherMapApi.getWeather(city, state)
+export const getCoords = createAsyncThunk("weather/getCoords", () =>
+  geopifyApi.getCoords()
+);
+
+export const getWeather = createAsyncThunk("weather/getWeather", (coords) =>
+  openWeatherMapApi.getWeather(coords)
 );
 
 const options = {
   name: "weather",
   initialState: {
-    city: "Seattle",
-    state: "Washington",
+    lat: "",
+    lon: "",
     metadata: {},
     temperature: "",
     minTemp: 0,
     maxTemp: 0,
     humidity: 0,
-    name: "Seattle",
+    name: "",
   },
-  reducers: {
-    setCity: (state, action) => {
-      state.city = action.payload;
-    },
-    setState: (state, action) => {
-      state.state = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: {
     [getWeather.fulfilled]: (state, action) => {
       state.metadata = action.payload.weatherMetadata;
-      state.temperature = action.payload.temperature;
+      state.temperature = Math.round(action.payload.temperature);
       state.humidity = action.payload.humidity;
-      state.maxTemp = action.payload.maxTemp;
-      state.minTemp = action.payload.minTemp;
+      state.maxTemp = Math.round(action.payload.maxTemp);
+      state.minTemp = Math.round(action.payload.minTemp);
       state.name = action.payload.name;
+    },
+    [getCoords.fulfilled]: (state, action) => {
+      state.lat = action.payload.lat;
+      state.lon = action.payload.lon;
     },
   },
 };
 
 export const weatherSlice = createSlice(options);
 export const selectWeather = (state) => state.weather;
-export const { setCity, setState } = weatherSlice.actions;
+export const selectLat = (state) => state.weather.lat;
+export const selectLon = (state) => state.weather.lon;
 export default weatherSlice.reducer;

@@ -1,23 +1,25 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeather, selectWeather } from "./weatherSlice";
+import {
+  getWeather,
+  selectWeather,
+  getCoords,
+  selectLat,
+  selectLon,
+} from "./weatherSlice";
 
 export const Weather = () => {
-  const {
-    metadata,
-    temperature,
-    city,
-    state,
-    humidity,
-    maxTemp,
-    minTemp,
-    name,
-  } = useSelector(selectWeather);
+  const lat = useSelector(selectLat);
+  const lon = useSelector(selectLon);
+  const coords = { lat: lat, lon: lon };
+  const { metadata, temperature, humidity, maxTemp, minTemp, name } =
+    useSelector(selectWeather);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getWeather({ city, state }));
-  }, [dispatch]);
+    dispatch(getCoords());
+    dispatch(getWeather(coords));
+  }, [dispatch, coords]);
 
   return (
     <div className="weather">

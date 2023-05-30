@@ -1,7 +1,8 @@
 const API_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY}&units=imperial`;
 
-export const getWeather = async (city, state) => {
-  const response = await fetch(`${API_URL}&q=${city},${state}`);
+export const getWeather = async (coords) => {
+  const { lat, lon } = coords;
+  const response = await fetch(`${API_URL}&lat=${lat}&lon=${lon}`);
   const json = await response.json();
 
   return {
