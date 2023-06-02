@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getBackgroundImage } from "../backgroundImage/backgroundImageSlice";
 import { getQuote } from "../quote/quoteSlice";
-import { getWeather } from "../weather/weatherSlice";
+import { getCoords, getWeather } from "../weather/weatherSlice";
 
 const options = {
   name: "errors",
@@ -20,13 +20,29 @@ const options = {
       state.errorMessage = "Getting image failed.";
       state.retryHandler = getBackgroundImage;
     },
+    [getBackgroundImage.pending]: (state) => {
+      state.errorMessage = "";
+    },
     [getQuote.rejected]: (state) => {
       state.errorMessage = "Getting quote of the day failed.";
       state.retryHandler = getQuote;
     },
+    [getQuote.pending]: (state) => {
+      state.errorMessage = "";
+    },
     [getWeather.rejected]: (state) => {
-      state.errorMessage = "Getting the weather failed.";
+      state.errorMessage = "";
       state.retryHandler = getWeather;
+    },
+    [getWeather.pending]: (state) => {
+      state.errorMessage = "";
+    },
+    [getCoords.rejected]: (state) => {
+      state.errorMessage = "Getting user coordinates failed.";
+      state.retryHandler = getCoords;
+    },
+    [getCoords.pending]: (state) => {
+      state.errorMessage = "";
     },
   },
 };

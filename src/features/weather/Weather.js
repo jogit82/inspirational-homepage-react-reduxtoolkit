@@ -19,7 +19,7 @@ export const Weather = () => {
   useEffect(() => {
     dispatch(getCoords());
     dispatch(getWeather(coords));
-  }, [dispatch, coords]);
+  }, [dispatch, lat, lon]);
 
   return (
     <div className="weather">
