@@ -23,19 +23,20 @@ const options = {
     name: "",
   },
   reducers: {},
-  extraReducers: {
-    [getWeather.fulfilled]: (state, action) => {
-      state.metadata = action.payload.weatherMetadata;
-      state.temperature = Math.round(action.payload.temperature);
-      state.humidity = action.payload.humidity;
-      state.maxTemp = Math.round(action.payload.maxTemp);
-      state.minTemp = Math.round(action.payload.minTemp);
-      state.name = action.payload.name;
-    },
-    [getCoords.fulfilled]: (state, action) => {
-      state.lat = action.payload.lat;
-      state.lon = action.payload.lon;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getWeather.fulfilled, (state, action) => {
+        state.metadata = action.payload.weatherMetadata;
+        state.temperature = Math.round(action.payload.temperature);
+        state.humidity = action.payload.humidity;
+        state.maxTemp = Math.round(action.payload.maxTemp);
+        state.minTemp = Math.round(action.payload.minTemp);
+        state.name = action.payload.name;
+      })
+      .addCase(getCoords.fulfilled, (state, action) => {
+        state.lat = action.payload.lat;
+        state.lon = action.payload.lon;
+      });
   },
 };
 

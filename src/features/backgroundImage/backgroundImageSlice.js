@@ -26,11 +26,13 @@ const options = {
       state.currentImageUrlIndex = newIndex;
     },
   },
-  extraReducers: {
-    [getBackgroundImage.fulfilled]: (state, action) => {
+  extraReducers: (builder) => {
+    // Add reducers for additional action types here, and handle loading state as needed
+    builder.addCase(getBackgroundImage.fulfilled, (state, action) => {
+      // Update image urls and set current index
       state.imageUrls = action.payload;
       state.currentImageUrlIndex = 0;
-    },
+    });
   },
 };
 
