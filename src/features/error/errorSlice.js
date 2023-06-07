@@ -15,35 +15,36 @@ const options = {
       state.retryHandler = null;
     },
   },
-  extraReducers: {
-    [getBackgroundImage.rejected]: (state) => {
-      state.errorMessage = "Getting image failed.";
-      state.retryHandler = getBackgroundImage;
-    },
-    [getBackgroundImage.pending]: (state) => {
-      state.errorMessage = "";
-    },
-    [getQuote.rejected]: (state) => {
-      state.errorMessage = "Getting quote of the day failed.";
-      state.retryHandler = getQuote;
-    },
-    [getQuote.pending]: (state) => {
-      state.errorMessage = "";
-    },
-    [getWeather.rejected]: (state) => {
-      state.errorMessage = "";
-      state.retryHandler = getWeather;
-    },
-    [getWeather.pending]: (state) => {
-      state.errorMessage = "";
-    },
-    [getCoords.rejected]: (state) => {
-      state.errorMessage = "Getting user coordinates failed.";
-      state.retryHandler = getCoords;
-    },
-    [getCoords.pending]: (state) => {
-      state.errorMessage = "";
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBackgroundImage.rejected, (state) => {
+        state.errorMessage = "Getting image failed.";
+        state.retryHandler = getBackgroundImage;
+      })
+      .addCase(getBackgroundImage.pending, (state) => {
+        state.errorMessage = "";
+      })
+      .addCase(getQuote.rejected, (state) => {
+        state.errorMessage = "Getting quote of the day failed.";
+        state.retryHandler = getQuote;
+      })
+      .addCase(getQuote.pending, (state) => {
+        state.errorMessage = "";
+      })
+      .addCase(getWeather.rejected, (state) => {
+        state.errorMessage = "";
+        state.retryHandler = getWeather;
+      })
+      .addCase(getWeather.pending, (state) => {
+        state.errorMessage = "";
+      })
+      .addCase(getCoords.rejected, (state) => {
+        state.errorMessage = "Getting user coordinates failed.";
+        state.retryHandler = getCoords;
+      })
+      .addCase(getCoords.pending, (state) => {
+        state.errorMessage = "";
+      });
   },
 };
 

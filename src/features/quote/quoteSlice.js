@@ -9,11 +9,11 @@ const options = {
     quote: "",
     author: "",
   },
-  extraReducers: {
-    [getQuote.fulfilled]: (state, action) => {
+  extraReducers: (builder) => {
+    builder.addCase(getQuote.fulfilled, (state, action) => {
       state.quote = action.payload.quote;
       state.author = action.payload.author;
-    },
+    });
   },
 };
 
