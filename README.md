@@ -97,3 +97,4 @@ My Inspirational Homepage:
       - fetches image data (image url) from unsplash https://api.unsplash.com/
    4. geopify
       - using user's IP to determine lat/lon, lat/lon are used to fetch local weather for user, getWeather(coords) (Thunk)
+      - https://www.geoapify.com
