@@ -4,6 +4,29 @@ Finished website (Deployed)
 
 https://superb-dango-1d77e8.netlify.app
 
+APIs: 
+- OpenWeatherMap
+- Geopify
+- API Ninja (quote)
+- Unsplash
+
+React:
+- useEffect
+- useState
+
+
+React Redux:
+- Provider
+- useDispatch
+- useSelector
+
+
+Redux Toolkit:
+- configureStore
+- createSlice
+- createAsyncThunk
+
+
 There is this browser extension that I love, it is called Momentum. I thought, what if I want to build something like this? What is involved in order for this to run as a web app instead of an extension?
 
 Here is what the extension looks like, and the next image is what my web app looks like:
@@ -50,7 +73,7 @@ My Inspirational Homepage:
       - weather.js
         - dispatches getWeather
       - weatherSlice.js
-        - contains getWeather(Thunk), setCity, setState logic
+        - contains getCoords (Thunk), getWeather (Thunk)
 3. components
    1. BackgroundImagePreviousImage.js
       - dispatches switchToPreviousBackgroundImage
@@ -72,3 +95,5 @@ My Inspirational Homepage:
       - fetches a quote data (quote, author) from quotes https://api.api-ninjas.com/v1/quotes
    3. unsplash
       - fetches image data (image url) from unsplash https://api.unsplash.com/
+   4. geopify
+      - using user's IP to determine lat/lon, lat/lon are used to fetch local weather for user, getWeather(coords) (Thunk)
